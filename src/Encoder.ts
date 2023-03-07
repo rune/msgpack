@@ -89,6 +89,7 @@ export class Encoder<ContextType = undefined> {
   private encodeNil() {
     this.writeU8(0xc0);
   }
+
   private encodeUndefined() {
     this.writeU8(0xc1);
   }
