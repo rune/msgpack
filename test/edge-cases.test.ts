@@ -71,17 +71,18 @@ describe("edge cases", () => {
     });
   });
 
-  // context("try to decode invalid MessagePack binary", () => {
-  //   it("throws errors", () => {
-  //     const decoder = new Decoder();
-  //     const TYPE_NEVER_USED = 0xc1;
-  //
-  //     assert.throws(() => {
-  //       decoder.decode([TYPE_NEVER_USED]);
-  //     }, /unrecognized type byte/i);
-  //     testDecoder(decoder);
-  //   });
-  // });
+  // No longer relevant because 0xc1 is used to encode `undefined`
+  context.skip("try to decode invalid MessagePack binary", () => {
+    it("throws errors", () => {
+      const decoder = new Decoder();
+      const TYPE_NEVER_USED = 0xc1;
+
+      assert.throws(() => {
+        decoder.decode([TYPE_NEVER_USED]);
+      }, /unrecognized type byte/i);
+      testDecoder(decoder);
+    });
+  });
 
   context("try to decode insufficient data", () => {
     it("throws errors (synchronous)", () => {
