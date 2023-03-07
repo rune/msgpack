@@ -8,7 +8,7 @@ test-all:
 
 publish: validate-git-status
 	npm publish
-	git push origin main
+	git push origin base-280
 	git push origin --tags
 
 validate-git-status:
