@@ -260,6 +260,9 @@ export class Decoder<ContextType = undefined> {
       } else if (headByte === 0xc0) {
         // nil
         object = null;
+      } else if (headByte === 0xc1) {
+        // undefined
+        object = undefined;
       } else if (headByte === 0xc2) {
         // false
         object = false;

@@ -71,7 +71,8 @@ describe("edge cases", () => {
     });
   });
 
-  context("try to decode invalid MessagePack binary", () => {
+  // No longer relevant because 0xc1 is used to encode `undefined`
+  context.skip("try to decode invalid MessagePack binary", () => {
     it("throws errors", () => {
       const decoder = new Decoder();
       const TYPE_NEVER_USED = 0xc1;

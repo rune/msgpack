@@ -51,12 +51,23 @@ describe("encode", () => {
 
   context("ignoreUndefined", () => {
     it("encodes { foo: undefined } as is by default", () => {
-      assert.deepStrictEqual(decode(encode({ foo: undefined, bar: 42 })), { foo: null, bar: 42 });
+      assert.deepStrictEqual(
+        decode(
+          encode({
+            foo: undefined,
+            bar: [42, undefined],
+          }),
+        ),
+        {
+          foo: undefined,
+          bar: [42, undefined],
+        },
+      );
     });
 
     it("encodes { foo: undefined } as is with `ignoreUndefined: false`", () => {
       assert.deepStrictEqual(decode(encode({ foo: undefined, bar: 42 }, { ignoreUndefined: false })), {
-        foo: null,
+        foo: undefined,
         bar: 42,
       });
     });

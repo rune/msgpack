@@ -5,6 +5,7 @@ build/
 .nyc_output/
 coverage/
 benchmark/sandbox.ts
+.idea/
 
 # v8 profiler logs
 isolate-*.log
