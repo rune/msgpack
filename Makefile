@@ -12,7 +12,7 @@ publish: validate-git-status
 	git push origin --tags
 
 validate-git-status:
-	@ if [ "`git symbolic-ref --short HEAD`" != "main" ] ; \
+	@ if [ "`git symbolic-ref --short HEAD`" != "base-280" ] ; \
 		then echo "Not on the main branch!\n" ; exit 1 ; \
 	fi
 	@ if ! git diff --exit-code --quiet ; \

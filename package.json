@@ -1,8 +1,8 @@
 {
-  "name": "@msgpack/msgpack",
-  "version": "2.8.0",
-  "description": "MessagePack for ECMA-262/JavaScript/TypeScript",
-  "author": "The MessagePack community",
+  "name": "rune-msgpack",
+  "version": "1.0.0",
+  "description": "A fork of MessagePack for ECMA-262/JavaScript/TypeScript with support for `undefined`",
+  "author": "Rune",
   "license": "ISC",
   "main": "./dist/index.js",
   "module": "./dist.es5+esm/index.mjs",
@@ -39,10 +39,7 @@
   "homepage": "https://msgpack.org/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/msgpack/msgpack-javascript.git"
-  },
-  "bugs": {
-    "url": "https://github.com/msgpack/msgpack-javascript/issues"
+    "url": "https://github.com/rune/msgpack.git"
   },
   "keywords": [
     "msgpack",
@@ -51,7 +48,7 @@
     "universal"
   ],
   "engines": {
-    "node": ">= 10"
+    "node": ">= 14"
   },
   "devDependencies": {
     "@bitjourney/check-es-version-webpack-plugin": "latest",
