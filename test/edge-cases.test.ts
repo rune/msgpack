@@ -177,6 +177,7 @@ describe("edge cases", () => {
 
       const results = [];
       for await (const item of decodeMultiStream(createStream())) {
+        // @ts-ignore
         results.push(item);
       }
       assert.deepStrictEqual(results, []);
