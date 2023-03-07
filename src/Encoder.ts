@@ -52,8 +52,10 @@ export class Encoder<ContextType = undefined> {
       throw new Error(`Too deep objects in depth ${depth}`);
     }
 
-    if (object == null) {
+    if (object === null) {
       this.encodeNil();
+    } else if (object === undefined) {
+      this.encodeUndefined();
     } else if (typeof object === "boolean") {
       this.encodeBoolean(object);
     } else if (typeof object === "number") {
@@ -86,6 +88,9 @@ export class Encoder<ContextType = undefined> {
 
   private encodeNil() {
     this.writeU8(0xc0);
+  }
+  private encodeUndefined() {
+    this.writeU8(0xc1);
   }
 
   private encodeBoolean(object: boolean) {
